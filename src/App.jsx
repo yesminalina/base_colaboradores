@@ -25,25 +25,28 @@ const App = () => {
       <Title/>
       <Buscador listaColaboradores={listaColaboradores}
       setColaboradoresFilter={setColaboradoresFilter}/>
-      <section className='colaboradores'>
-      <Listado
-      listaColaboradores={listaColaboradores} 
-      setListaColaboradores={setListaColaboradores}
-      colaboradoresFilter={colaboradoresFilter}
-      setColaboradoresFilter={setColaboradoresFilter} />  
-      <div>
-      <Formulario 
-      listaColaboradores={listaColaboradores} 
-      setListaColaboradores={setListaColaboradores}
-      colaboradoresFilter={colaboradoresFilter}
-      setColaboradoresFilter={setColaboradoresFilter}
-      setMsgAlerta={setMsgAlerta}
-      msgAlerta={msgAlerta}/>
-      <Alerta 
-      msg={msg}
-      color={color}
-      />
-      </div>
+      <section className='colaboradores row row-cols-1 row-cols-md-2'>
+        <div className='col col-12 col-md-8'>
+          <Listado
+          listaColaboradores={listaColaboradores} 
+          setListaColaboradores={setListaColaboradores}
+          colaboradoresFilter={colaboradoresFilter}
+          setColaboradoresFilter={setColaboradoresFilter}/>
+        </div>
+
+        <div className='col col-12 col-md-4'>
+          <Formulario 
+          listaColaboradores={listaColaboradores} 
+          setListaColaboradores={setListaColaboradores}
+          colaboradoresFilter={colaboradoresFilter}
+          setColaboradoresFilter={setColaboradoresFilter}
+          setMsgAlerta={setMsgAlerta}
+          msgAlerta={msgAlerta}/>
+          <Alerta 
+          msg={msg}
+          color={color}
+          />
+        </div>
       </section>
     </main>
   )
