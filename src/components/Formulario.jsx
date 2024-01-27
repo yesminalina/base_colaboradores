@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form'; 
+import './Formulario.css'
 
 const Formulario = ({listaColaboradores, setListaColaboradores, colaboradoresFilter, setColaboradoresFilter, setMsgAlerta}) => {
 
@@ -58,7 +59,7 @@ const Formulario = ({listaColaboradores, setListaColaboradores, colaboradoresFil
   return (
     <>
     <h2>Agregar Colaborador</h2>
-    <Form className="mt-5" onSubmit={handleSubmit}>
+    <Form className="mt-3" onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formNombre">
         <Form.Control 
         type="text" 
@@ -99,7 +100,7 @@ const Formulario = ({listaColaboradores, setListaColaboradores, colaboradoresFil
         value={formData.telefono} 
         onChange={(e) => handleChange(e.target.value, e.target.name)}/>
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button className='btn w-100 mb-3' type="submit">
         Agregar
       </Button>
     </Form>

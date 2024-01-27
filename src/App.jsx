@@ -3,6 +3,7 @@ import Buscador from './components/Buscador'
 import Listado from './components/Listado'
 import Formulario from './components/Formulario'
 import Alerta from './components/Alerta'
+import Title from './components/Title'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { BaseColaboradores } from './BaseColaboradores'
 import { useState } from 'react'
@@ -21,12 +22,16 @@ const App = () => {
 
   return (
     <main>
-      <Buscador/>
+      <Title/>
+      <Buscador listaColaboradores={listaColaboradores}
+      setColaboradoresFilter={setColaboradoresFilter}/>
+      <section className='colaboradores'>
       <Listado
       listaColaboradores={listaColaboradores} 
       setListaColaboradores={setListaColaboradores}
       colaboradoresFilter={colaboradoresFilter}
       setColaboradoresFilter={setColaboradoresFilter} />  
+      <div>
       <Formulario 
       listaColaboradores={listaColaboradores} 
       setListaColaboradores={setListaColaboradores}
@@ -37,8 +42,9 @@ const App = () => {
       <Alerta 
       msg={msg}
       color={color}
-    
       />
+      </div>
+      </section>
     </main>
   )
 }
