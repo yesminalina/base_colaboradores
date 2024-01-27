@@ -11,15 +11,30 @@ const App = () => {
   const [listaColaboradores, setListaColaboradores] = useState(BaseColaboradores)
   const [colaboradoresFilter, setColaboradoresFilter] = useState(listaColaboradores)
 
+  const [msgAlerta, setMsgAlerta] = useState({
+    msg: "",
+    color: "",
+    error: false,
+  })
+
   return (
     <main>
       <Buscador/>
-      <Listado listaColaboradores={listaColaboradores} 
+      <Listado
+      listaColaboradores={listaColaboradores} 
       setListaColaboradores={setListaColaboradores}
       colaboradoresFilter={colaboradoresFilter}
       setColaboradoresFilter={setColaboradoresFilter} />  
-      <Formulario />
-      <Alerta />
+      <Formulario 
+      listaColaboradores={listaColaboradores} 
+      setListaColaboradores={setListaColaboradores}
+      colaboradoresFilter={colaboradoresFilter}
+      setColaboradoresFilter={setColaboradoresFilter}
+      setMsgAlerta={setMsgAlerta}
+      msgAlerta={msgAlerta}/>
+      <Alerta 
+      msg={msgAlerta}
+      />
     </main>
   )
 }
