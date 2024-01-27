@@ -14,8 +14,10 @@ const App = () => {
   const [msgAlerta, setMsgAlerta] = useState({
     msg: "",
     color: "",
-    error: false,
+
   })
+
+  const {msg, color, error} = msgAlerta
 
   return (
     <main>
@@ -33,7 +35,9 @@ const App = () => {
       setMsgAlerta={setMsgAlerta}
       msgAlerta={msgAlerta}/>
       <Alerta 
-      msg={msgAlerta}
+      msg={msg}
+      color={color}
+    
       />
     </main>
   )

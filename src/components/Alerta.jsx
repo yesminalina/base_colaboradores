@@ -1,8 +1,12 @@
+import Alert from 'react-bootstrap/Alert';
 
-const Alerta = () => {
+const Alerta = ({color, msg}) => {
+
   return (
-    <div>Alerta</div>
-  )
+  <Alert variant={color}>
+    {msg}
+  </Alert>
+)
 }
 
 export default Alerta

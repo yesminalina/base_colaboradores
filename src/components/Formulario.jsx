@@ -27,7 +27,6 @@ const Formulario = ({listaColaboradores, setListaColaboradores, colaboradoresFil
     if (validarInput) {
       setMsgAlerta(
       {
-        error: true,
         msg: 'Debes llenar todos los campos',
         color: 'danger'
       }
@@ -36,7 +35,6 @@ const Formulario = ({listaColaboradores, setListaColaboradores, colaboradoresFil
     } else {
       setMsgAlerta(
         {
-          error: false,
           msg: 'Colaborador creado exitosamente',
           color: 'success'
         } 
@@ -58,6 +56,8 @@ const Formulario = ({listaColaboradores, setListaColaboradores, colaboradoresFil
   }
 
   return (
+    <>
+    <h2>Agregar Colaborador</h2>
     <Form className="mt-5" onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formNombre">
         <Form.Control 
@@ -103,6 +103,7 @@ const Formulario = ({listaColaboradores, setListaColaboradores, colaboradoresFil
         Agregar
       </Button>
     </Form>
+    </>
   )
 }
 
